@@ -27,8 +27,13 @@ ActiveRecord::Schema.define(version: 20131011160349) do
   end
 
   create_table "recipes", force: true do |t|
+    t.integer  "menu_item_id"
+    t.integer  "ingredient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "recipes", ["ingredient_id"], name: "index_recipes_on_ingredient_id"
+  add_index "recipes", ["menu_item_id"], name: "index_recipes_on_menu_item_id"
 
 end
