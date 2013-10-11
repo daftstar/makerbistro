@@ -12,9 +12,18 @@
   <tbody>
     <% @menu_items.each do |menu_item| %>
       <tr>
-        <td><p><%= menu_item.name %></p></td>
+        <td><p><%= menu_item.name %></p>
+        <% menu_item.ingredients.each do |ingredientName|%>
+          <em><%= ingredientName.name%>,</em>
+        <% end %>
+
+
+
+
+        </td>
+
         <td><p>$<%= menu_item.price %></p></td>
-        <td><p>$<%= menu_item.ingredients %></p></td>
+
 
 
 
